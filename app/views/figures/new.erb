@@ -1,0 +1,6 @@
+<h1>Create a Figure</h1>
+<h3>Name: <input type="text" name="figure[name]"></input></h3>
+<h3>Titles:</h3>
+<% Title.all.each do |title| %>
+<input type="checkbox" name="figure[title_ids]" id="<%= title.id %>" value="<%= title.id %>"><%= title.name %></input>
+<% end %>
