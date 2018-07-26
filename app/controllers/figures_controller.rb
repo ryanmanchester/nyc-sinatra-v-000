@@ -33,11 +33,17 @@ class FiguresController < ApplicationController
 
   get '/figures/:id/edit' do
     @figure = Figure.find(params[:id])
-
     erb :'/figures/edit'
   end
 
   patch '/figures/:id' do
-    binding.pry
+    @figure = Figure.find(params[:id])
+    @figure.update(name: params[:figure]["name"])
+
+    if !params[:landmark]["name"].empty?
+      @figure.landmarks.each do |landmark|
+        landmark.update(name: params[:landmark]["name"])
+      end
+    end
   end
 end
