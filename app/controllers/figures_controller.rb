@@ -38,6 +38,6 @@ class FiguresController < ApplicationController
   end
 
   patch '/figures/:id' do
-    binding.pry
+    #binding.pry
   end
 end
