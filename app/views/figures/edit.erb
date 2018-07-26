@@ -5,7 +5,9 @@
 <h3>Edit Name: <input type="text" name="figure[name]" id="figure_name" value="<%= @figure.name %>"></input></h3>
 
 <h3>Edit Title:</h3>
-
+<% Title.all.each do |title| %>
+  <input type="checkbox" name="figure[title_ids]" id="title_ids" <%= 'checked' if @figure.titles.include?(title) %>><%= title.name %></input>
+<% end %>
 
   <input type="text" name="title[name]" id="new_title" ></input>
 
