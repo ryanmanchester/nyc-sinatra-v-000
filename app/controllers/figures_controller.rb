@@ -40,6 +40,7 @@ class FiguresController < ApplicationController
   patch '/figures/:id' do
     @figure = Figure.find(params[:id])
     @figure.update(name: params[:figure]["name"])
+
     if !params[:landmark]["name"].empty?
       @figure.landmarks.each do |landmark|
         landmark.update(name: params[:landmark]["name"])
