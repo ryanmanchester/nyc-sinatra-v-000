@@ -39,6 +39,6 @@ class FiguresController < ApplicationController
 
   patch '/figures/:id' do
     @figure = Figure.find(params[:id])
-    #binding.pry
+    binding.pry
   end
 end
